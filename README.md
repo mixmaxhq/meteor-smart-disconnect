@@ -12,6 +12,9 @@ Add this to your app with:
 meteor add mixmax:smart-disconnect
 ```
 
+## Meteor Settings
+You can change the time for which the user is away for before you disconnect. By default this value is 10 seconds, but you can set `Meteor.settings.public.disconnectTime` to a different value to change this. This value is in seconds.
+
 ## Contributing
 
 We welcome all contributions! Please enhance this with more logic to disconnect in a smart way. Some ideas:
