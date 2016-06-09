@@ -1,7 +1,7 @@
 var disconnectTimer = null;
 
 // 10 seconds by default
-var disconnectTime = (Meteor.settings && Meteor.settings.public && Meteor.settings.public.disconnectTime || 10) * 1000;
+var disconnectTime = (Meteor.settings && Meteor.settings.public && Meteor.settings.public.disconnectTime || 60) * 1000;
 
 Meteor.startup(function () {
   disconnectIfHidden();  
