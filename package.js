@@ -1,7 +1,7 @@
 Package.describe({
   name: 'mixmax:smart-disconnect',
   summary: 'Smartly disconnect your Meteor app when it is not in use',
-  version: '0.0.2',
+  version: '0.0.3',
   git: 'https://github.com/mixmaxhq/meteor-smart-disconnect'
 });
 
