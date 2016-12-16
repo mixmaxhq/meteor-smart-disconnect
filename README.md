@@ -2,7 +2,7 @@
 
 Meteor connections are [expensive](https://groups.google.com/forum/?hl=en&fromgroups#!searchin/meteor-core/meteor.disconnect/meteor-core/tHc9kC4mjcI/0ktN9qead8EJ). That's why Meteor [introduced](https://github.com/meteor/meteor/pull/1151) `Meteor.disconnect()`. It allows you to disconnect the entire Meteor client from the server. Reconnecting is as easy as calling `Meteor.reconnect()`.
 
-So why keep the app connected if your user isn't interacting with your app? This simple package will disconnect your app when the user switches to another tab and leaves your app in the background. It will also debounce for 10 seconds so it doesn't disconnect and reconnect if the user is switching through tabs quickly.
+So why keep the app connected if your user isn't interacting with your app? This simple package will disconnect your app when the user switches to another tab and leaves your app in the background. It will also debounce for 60 seconds so it doesn't disconnect and reconnect if the user is switching through tabs quickly.
 
 ## Adding
 
@@ -13,7 +13,7 @@ meteor add mixmax:smart-disconnect
 ```
 
 ## Meteor Settings
-You can change the time for which the user is away for before you disconnect. By default this value is 10 seconds, but you can set `disconnectTimeSec` in your Meteor settings file to a different value to change this. This value is in seconds and `disconnectTimeSec` should be a public value in your settings file.
+You can change the time for which the user is away for before you disconnect. By default this value is 60 seconds, but you can set `disconnectTimeSec` in your Meteor settings file to a different value to change this. This value is in seconds and `disconnectTimeSec` should be a public value in your settings file.
 
 ## Contributing
 

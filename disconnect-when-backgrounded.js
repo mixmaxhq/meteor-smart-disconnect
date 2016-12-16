@@ -1,10 +1,10 @@
 var disconnectTimer = null;
 
-// 10 seconds by default
+// 60 seconds by default
 var disconnectTime = (Meteor.settings && Meteor.settings.public && Meteor.settings.public.disconnectTimeSec || 60) * 1000;
 
 Meteor.startup(function () {
-  disconnectIfHidden();  
+  disconnectIfHidden();
 });
 
 document.addEventListener('visibilitychange', function() {
@@ -17,7 +17,7 @@ document.addEventListener('visibilitychange', function() {
 
 function disconnectIfHidden() {
   if (document.hidden) {
-    // Disconnect the app if the tab is in the background for 10 seconds.
+    // Disconnect the app if the tab is in the background for 60 seconds.
     disconnectTimer = setTimeout(function() {
       Meteor.disconnect();
     }, disconnectTime);
