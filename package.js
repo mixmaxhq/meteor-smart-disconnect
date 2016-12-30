@@ -1,13 +1,13 @@
 Package.describe({
-  name: 'mixmax:smart-disconnect',
-  summary: 'Smartly disconnect your Meteor app when it is not in use',
-  version: '0.0.2',
-  git: 'https://github.com/mixmaxhq/meteor-smart-disconnect'
+    name: 'mixmax:smart-disconnect',
+    summary: 'Smartly disconnect your Meteor app when it is not in use',
+    version: '0.0.3',
+    git: 'https://github.com/mixmaxhq/meteor-smart-disconnect',
 });
 
-Package.onUse(function(api) {
-  api.versionsFrom('1.0.2.1');
-  api.addFiles('disconnect-when-backgrounded.js', ['client']);
+Package.onUse(function (api) {
+    api.versionsFrom('1.0.2.1');
+    api.addFiles('disconnect-when-backgrounded.js', ['client']);
 });
 
 /*
