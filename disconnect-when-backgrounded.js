@@ -17,7 +17,7 @@ function disconnectIfHidden() {
     removeDisconnectTimeout();
 
     if (document.hidden) {
-        if((Package["iron:router"] && disconnectVoids.indexOf(Router.current().route.getName()) < 0) || (!Package["iron:router"])){
+        if(!Package["iron:router"] || disconnectVoids.indexOf(Router.current().route.getName()) < 0){
             createDisconnectTimeout();
         }
     } else {
