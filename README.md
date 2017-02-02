@@ -15,6 +15,10 @@ meteor add mixmax:smart-disconnect
 ## Meteor Settings
 You can change the time for which the user is away for before you disconnect. By default this value is 60 seconds, but you can set `disconnectTimeSec` in your Meteor settings file to a different value to change this. This value is in seconds and `disconnectTimeSec` should be a public value in your settings file.
 
+If you are using the Iron Router package, you can stop the smart-disconnect from working on some of your routes by adding a `disconnectVoids` key into the public section of your settings file. It must be an array of route names such as:
+
+    "disconnectVoids" : ["Dashboard","Account","Profile"]
+
 ## Contributing
 
 We welcome all contributions! Please enhance this with more logic to disconnect in a smart way. Some ideas:
