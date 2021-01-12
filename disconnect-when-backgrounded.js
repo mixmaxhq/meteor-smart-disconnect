@@ -13,10 +13,12 @@ if (Meteor.isCordova) {
     document.addEventListener('pause', function () { createDisconnectTimeout(); });
 }
 
+const currentPageIsNotExempt = () => { return disconnectVoids.indexOf(window.location.pathname) == -1; };
+
 function disconnectIfHidden() {
     removeDisconnectTimeout();
 
-    if (document.hidden) {
+    if (document.hidden && currentPageIsNotExempt()) {
         if(!Package["iron:router"] || disconnectVoids.indexOf(Router.current().route.getName()) < 0){
             createDisconnectTimeout();
         }
