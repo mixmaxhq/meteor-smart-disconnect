@@ -19,6 +19,10 @@ If you are using the Iron Router package, you can stop the smart-disconnect from
 
     "disconnectVoids" : ["Dashboard","Account","Profile"]
 
+If you are not using the Iron Router package, you can stop the smart-disconnect from working on some of your routes by passing their pathname:
+
+    "disconnectVoids": ["/dashboard/account", "/dashboard/settings"]
+
 ## Contributing
 
 We welcome all contributions! Please enhance this with more logic to disconnect in a smart way. Some ideas:
