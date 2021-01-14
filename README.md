@@ -19,6 +19,34 @@ If you are using the Iron Router package, you can stop the smart-disconnect from
 
     "disconnectVoids" : ["Dashboard","Account","Profile"]
 
+If you are not using the Iron Router package, you can stop the smart-disconnect from working on some of your routes by passing their pathname:
+
+    "disconnectVoids": ["/dashboard/account", "/dashboard/settings"]
+
+## Check Disconnect & Reconnect
+
+You can test whether you are connected or disconnected by using Meteor's Tracker package:
+
+```
+import { Tracker } from 'meteor/tracker';
+
+export const MyComponent = () => {
+    Tracker.autorun(() => {
+        console.log(Meteor.status().status);
+    });
+}
+```
+
+This will console log your connection status as it changes.
+
+It can be helpful to include timestamps as well:
+
+```
+Tracker.autorun(() => {
+    console.log(`${new Date().toLocaleTimeString('en-GB')} : ${Meteor.status().status}`);
+});
+```
+
 ## Contributing
 
 We welcome all contributions! Please enhance this with more logic to disconnect in a smart way. Some ideas:
