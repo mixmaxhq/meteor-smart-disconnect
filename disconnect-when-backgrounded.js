@@ -13,15 +13,16 @@ if (Meteor.isCordova) {
     document.addEventListener('pause', function () { createDisconnectTimeout(); });
 }
 
-const currentPageIsNotExempt = () => { return disconnectVoids.indexOf(window.location.pathname) == -1; };
+function currentPageIsNotExempt() {
+    const pathName = Package["iron:router"] ? Router.current().route.getName() : window.location.pathname;
+    return !disconnectVoids.includes(pathName);
+};
 
 function disconnectIfHidden() {
     removeDisconnectTimeout();
 
     if (document.hidden && currentPageIsNotExempt()) {
-        if(!Package["iron:router"] || disconnectVoids.indexOf(Router.current().route.getName()) < 0){
-            createDisconnectTimeout();
-        }
+        createDisconnectTimeout();
     } else {
         Meteor.reconnect();
     }
